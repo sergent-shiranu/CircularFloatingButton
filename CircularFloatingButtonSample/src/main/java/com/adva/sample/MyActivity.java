@@ -15,34 +15,34 @@ import com.adva.sample.R;
 
 public class MyActivity extends Activity {
 
-    private CircularFloatingButton mFab;
+    private CircularFloatingButton mCfb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my);
-        mFab = (CircularFloatingButton) findViewById(R.id.fabbutton);
+        mCfb = (CircularFloatingButton) findViewById(R.id.cfbbutton);
 
         ListView listView = (ListView) findViewById(R.id.list_view);
         listView.setAdapter(new ArrayAdapter<String>(this,
                 R.layout.list_item, getResources().getStringArray(R.array.planets_array)));
-        mFab.listenTo(listView);
+        mCfb.listenTo(listView);
 
         getActionBar().setBackgroundDrawable(new ColorDrawable(Color.BLACK));
     }
 
 
-    public void hideFab(View view) {
-        mFab.hide(true);
+    public void hideCFB(View view) {
+        mCfb.hide(true);
         //getActionBar().hide();
     }
 
-    public void showFab(View view) {
-        mFab.hide(false);
+    public void showCFB(View view) {
+        mCfb.hide(false);
         //getActionBar().show();
     }
 
-    public void fabClicked(View view) {
+    public void cfbClicked(View view) {
         Toast.makeText(this, getResources().getString(R.string.hello_world), Toast.LENGTH_LONG)
                 .show();
     }
@@ -51,37 +51,37 @@ public class MyActivity extends Activity {
         switch (view.getId()) {
             case R.id.blueButton: {
                 int holoBlue = getResources().getColor(android.R.color.holo_blue_light);
-                mFab.setColor(holoBlue);
+                mCfb.setColor(holoBlue);
                 getActionBar().setBackgroundDrawable(new ColorDrawable(holoBlue));
-                mFab.setDrawable(getResources().getDrawable(R.drawable.ic_content_new));
+                mCfb.setDrawable(getResources().getDrawable(R.drawable.ic_content_new));
                 break;
             }
             case R.id.purpleButton: {
                 int holoPurple = getResources().getColor(android.R.color.holo_purple);
-                mFab.setColor(holoPurple);
+                mCfb.setColor(holoPurple);
                 getActionBar().setBackgroundDrawable(new ColorDrawable(holoPurple));
-                mFab.setDrawable(getResources().getDrawable(R.drawable.ic_av_play));
+                mCfb.setDrawable(getResources().getDrawable(R.drawable.ic_av_play));
                 break;
             }
             case R.id.greenButton: {
                 int holoGreen = getResources().getColor(android.R.color.holo_green_light);
-                mFab.setColor(holoGreen);
+                mCfb.setColor(holoGreen);
                 getActionBar().setBackgroundDrawable(new ColorDrawable(holoGreen));
-                mFab.setDrawable(getResources().getDrawable(R.drawable.ic_content_discard));
+                mCfb.setDrawable(getResources().getDrawable(R.drawable.ic_content_discard));
                 break;
             }
             case R.id.orangeButton: {
                 int holoOrange = getResources().getColor(android.R.color.holo_orange_light);
-                mFab.setColor(holoOrange);
+                mCfb.setColor(holoOrange);
                 getActionBar().setBackgroundDrawable(new ColorDrawable(holoOrange));
-                mFab.setDrawable(getResources().getDrawable(R.drawable.ic_social_add_person));
+                mCfb.setDrawable(getResources().getDrawable(R.drawable.ic_social_add_person));
                 break;
             }
             case R.id.redButton: {
                 int holoRed = getResources().getColor(android.R.color.holo_red_light);
-                mFab.setColor(holoRed);
+                mCfb.setColor(holoRed);
                 getActionBar().setBackgroundDrawable(new ColorDrawable(holoRed));
-                mFab.setDrawable(getResources().getDrawable(R.drawable.ic_navigation_accept));
+                mCfb.setDrawable(getResources().getDrawable(R.drawable.ic_navigation_accept));
                 break;
             }
         }
